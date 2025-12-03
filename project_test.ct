@@ -1,0 +1,7 @@
+say "Hello"
+say "Soon is christmas time"
+say "bubu"
+gift count = 1
+gift count2 = 2
+
+say count+count2
