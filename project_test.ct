@@ -1,7 +1,15 @@
-say "Hello"
-say "Soon is christmas time"
-say "bubu"
-gift count = 1
-gift count2 = 2
+say "Hello welcome to christmastime"
 
-say count+count2
+gift count = 6
+jingle count times {
+    say "Ho ho ho!"
+}
+
+gift gifts = 2
+if gifts > 3 {
+    say "Many gifts!"
+} else {
+    say "Just a few gifts."
+}
+
+say 4+5

@@ -706,7 +706,16 @@ Value eval_unary(Expr *e) {
 Value eval_expr(Expr *e) {
     if (!e) return make_nil();
     switch (e->type) {
-        case EXPR_LITERAL: return e->literal; // note: transfer ownership for string
+        case EXPR_LITERAL: {
+            // IMPORTANT: if the literal is a string, create a copy
+            // so that runtime frees don't corrupt the AST-owned string.
+            if (e->literal.type == VAL_STRING) {
+                return make_string(e->literal.string ? e->literal.string : "");
+            } else {
+                // numbers/bools/nil are plain values — safe to return copy
+                return e->literal;
+            }
+        }
         case EXPR_VAR: return env_get(e->name);
         case EXPR_GROUP: return eval_expr(e->left);
         case EXPR_UNARY: return eval_unary(e);
@@ -780,10 +789,8 @@ void free_expr(Expr *e) {
     if (!e) return;
     if (e->type == EXPR_LITERAL) {
         // literal might have string allocated; free when appropriate
+        // The AST owns this copy of the literal, so free here.
         if (e->literal.type == VAL_STRING && e->literal.string) {
-            // it's allocated on creation - free
-            // but careful: when eval_expr returns literal it transfers ownership
-            // To keep it simple, free here as well
             free(e->literal.string);
             e->literal.string = NULL;
         }
