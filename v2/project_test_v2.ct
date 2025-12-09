@@ -42,3 +42,19 @@ say fact(3)
 
 say "----------------------------------------------"
 say "Basic tests all passed!"
+
+
+hoho printMsg(count)
+{
+    say "Print in function in loop " + count
+}
+
+gift countLoop = 0
+
+jingle 10000 times {
+    printMsg(countLoop)
+    gift countLoop = countLoop + 1
+}
+
+say "----------------------------------------------"
+say "Basic tests all passed!"
