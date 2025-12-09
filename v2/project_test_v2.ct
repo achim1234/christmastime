@@ -1,0 +1,44 @@
+say "Hello welcome to christmastime"
+
+say "----------------------------------------------"
+say "Variable declaration and looping:"
+gift count = 6
+jingle count times {
+    say "Ho ho ho!"
+}
+
+say "----------------------------------------------"
+say "Test if/else condition:"
+gift gifts = 2
+if gifts > 3 {
+    say "Many gifts!"
+} else {
+    say "Just a few gifts."
+}
+
+say "----------------------------------------------"
+say "Output sum test:"
+say 4+5
+
+say "----------------------------------------------"
+say "function test add:"
+hoho add(a, b) {
+    return a + b
+}
+
+say add(2,3)
+say add(20,3000)
+
+say "----------------------------------------------"
+say "function faculty:"
+hoho fact(n) {
+  if n == 0 { return 1 }
+  return n * fact(n - 1)
+}
+
+say fact(5)
+say fact(2)
+say fact(3)
+
+say "----------------------------------------------"
+say "Basic tests all passed!"
