@@ -1,7 +1,3 @@
-Here is your **updated `documentation.md`** with *full function + return support* added cleanly and consistently in ChristmasTime style.
-
----
-
 # 🎄 ChristmasTime Scripting Language
 
 ### *Official Documentation — Version 0.2 (with Function Support)*
@@ -276,15 +272,3 @@ say result
 * Standard library
 * Closures
 * Native functions
-
----
-
-If you'd like, I can also:
-
-✅ Add syntax highlighting
-✅ Create a downloadable `documentation.md` file
-✅ Generate tests or examples
-✅ Produce function grammar (EBNF)
-✅ Extend the road map further
-
-Just tell me!
